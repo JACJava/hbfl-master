@@ -1,6 +1,6 @@
-let date_ob = new Date()
-console.log(date_ob.getDate()+`:  index.js, Logging initial comment in index.js!!!!!!`)
-console.log(date_ob.getDate()+`:  index.js, I am glad that I figure this out!!!`)
+var ts = new Date()
+console.log(ts.toLocaleString()+`:  index.js, Logging initial comment in index.js!!!!!!`)
+console.log(ts.toLocaleString()+`:  index.js, I am glad that I figure this out!!!`)
 
 const Hapi = require('hapi')
 const plugins = require('./plugins')
