@@ -1,4 +1,4 @@
-let date_ob = Date()
+let date_ob = new Date()
 console.log(date_ob.getDate()+`:  index.js, Logging initial comment in index.js!!!!!!`)
 console.log(date_ob.getDate()+`:  index.js, I am glad that I figure this out!!!`)
 
