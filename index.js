@@ -65,7 +65,7 @@ server.register(plugins, (err) => {
   .then(() => {
     server.start((err) => {
       if (err) throw err
-      console.log(`Server started at http://localhost:${server.info.port}`)
+      console.log(Date().toLocaleString()+`:  index.js, Server started at http://localhost:${server.info.port}`)
       register.listener()
     })
   })
