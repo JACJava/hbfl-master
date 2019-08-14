@@ -1,3 +1,5 @@
+console.log(`Logging initial comment in index.js!!!!!!`)
+
 const Hapi = require('hapi')
 const plugins = require('./plugins')
 const routes = require('./routes')
