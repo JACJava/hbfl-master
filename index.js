@@ -1,5 +1,5 @@
 console.log(`Logging initial comment in index.js!!!!!!`)
-console.log('i am glad i figured this out!!!!'')
+console.log(`I am glad that I figure this out!!!`)
 
 const Hapi = require('hapi')
 const plugins = require('./plugins')
