@@ -1,6 +1,6 @@
-var ts = new Date()
-console.log(ts.toLocaleString()+`:  index.js, Logging initial comment in index.js!!!!!!`)
-console.log(ts.toLocaleString()+`:  index.js, I am glad that I figure this out!!!`)
+//var ts = new Date()
+console.log(Date().toLocaleString()+":  index.js, Logging initial comment in index.js!!!!!!")
+console.log(Date().toLocaleString()+":  index.js, I am glad that I figured this out!!!")
 
 const Hapi = require('hapi')
 const plugins = require('./plugins')
