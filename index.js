@@ -1,5 +1,6 @@
-console.log(`Logging initial comment in index.js!!!!!!`)
-console.log(`I am glad that I figure this out!!!`)
+let date_ob = Date()
+console.log(date_ob.getDate()+`:  index.js, Logging initial comment in index.js!!!!!!`)
+console.log(date_ob.getDate()+`:  index.js, I am glad that I figure this out!!!`)
 
 const Hapi = require('hapi')
 const plugins = require('./plugins')
