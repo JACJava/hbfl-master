@@ -10,12 +10,12 @@ const { init: queueInit } = require('./lib/data/lib/sqs.listener')
 
 const options = {
   // Commented out until Elasticache is configured
-  // cache: [{
-  //   name: 'redis',
-  //   engine: require('catbox-redis'),
-  //   host: 'hamster.792iyi.0001.use1.cache.amazonaws.com',
-  //   partition: 'cache'
-  // }]
+  cache: [{
+    name: 'redis',
+    engine: require('catbox-redis'),
+    host: 'hamster.u4bjnm.0001.use2.cache.amazonaws.com',
+    partition: 'cache'
+  }]
 }
 const server = new Hapi.Server(options)
 server.connection({ port: process.env.PORT || 3000 })
@@ -25,7 +25,7 @@ server.register(plugins, (err) => {
 
   // hapi-auth-cookie stuff
   const cache = server.cache({
-    // cache: 'redis',
+    cache: 'redis',
     segment: 'sessions',
     expiresIn: 3 * 24 * 60 * 60 * 1000
   })
