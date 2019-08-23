@@ -17,7 +17,7 @@ class Hero extends React.Component {
             Hamster Ball Fantasy League
           </div>
           <div className={styles.tagline}>
-            The ONLY place on the web to follow the Hamster Ball League
+            The ONLY place on the web to follow the Julie Hamster Ball League
           </div>
         </div>
       </div>
