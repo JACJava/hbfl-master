@@ -46,7 +46,7 @@ function createLambda (roleArn, lambdaName, zippedCode) {
 function createTrigger (kinesisArn, lambdaName) {
   // Create params const for trigger
   const params = {
-    EventSourceARN:  kinesisArn,
+    EventSourceArn:  kinesisArn,
     FunctionName:  lambdaName,
     StartingPosition:  'LATEST',
     BatchSize:  100
