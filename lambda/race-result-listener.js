@@ -1,9 +1,11 @@
+console.log(Date().toLocaleString()+":  rase-result-listener.js, initial comment")
+
 const AWS = require('aws-sdk')
 
 const RACE_QUEUE = 'race-result-queue'
 const HAMSTERS_TABLE = 'hamsters'
 
-AWS.config.update({ region: 'us-east-1' })
+AWS.config.update({ region: 'us-east-2' })
 
 const sqs = new AWS.SQS()
 const client = new AWS.DynamoDB.DocumentClient()
