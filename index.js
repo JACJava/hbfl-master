@@ -61,7 +61,7 @@ server.register(plugins, (err) => {
   // initialize database and start server
   init()
   // Commented out until SQS is configured
-  // .then(() => queueInit())
+  .then(() => queueInit())
   .then(() => {
     server.start((err) => {
       if (err) throw err
