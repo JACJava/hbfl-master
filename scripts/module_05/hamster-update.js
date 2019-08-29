@@ -17,9 +17,12 @@ var params = {
   Key:  {
     "id": id
   },
-  UpdateExpression:  "set name = :n",
+  UpdateExpression:  "set #hsname = :n",
   ExpressionAttributeValues:{
     ":n":"JulieCakes"
+  },
+  ExpressionAttributeNames:{
+    "#hsname":"name"
   },
   ReturnValues:  "UPDATED_NEW"
 }
