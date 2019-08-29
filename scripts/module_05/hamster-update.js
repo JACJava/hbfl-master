@@ -17,7 +17,7 @@ var params = {
   Key:  {
     "id": id
   },
-  UpdateExpression:  "set info.name = :n",
+  UpdateExpression:  "set name = :n",
   ExpressionAttributeValues:{
     ":n":"JulieCakes"
   },
