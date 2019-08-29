@@ -32,5 +32,6 @@ client.update(params, function(err, data) {
     } else {
         console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2))
     }
+  })
 
 console.log("End Updating Hamster table.")
