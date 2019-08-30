@@ -21,10 +21,10 @@ var params = {
   Key:  {
     "id": hamsterIdNumber
   },
-  UpdateExpression:  "set #hsname = :n",
+  UpdateExpression:  "set #hsname = :n, results = :r",
   ExpressionAttributeValues:{
-    ":n":"JulieCakes4"
-  },
+    ":n":"JulieCakes5",
+    ":r": [{"raceId": 2,"place": 1}]}
   ExpressionAttributeNames:{
     "#hsname":"name"
   },
