@@ -12,9 +12,9 @@ const client = new AWS.DynamoDB.DocumentClient()
 console.log(Date().toLocaleString()+":  Updating Hamster id 1 in the hamster table.")
 
 hamsterId = '1'
-console.log(Date().toLocaleString()+":  type of id:  "+typeof hamsterId)
+console.log(Date().toLocaleString()+":  type of hamsterId:  "+typeof hamsterId)
 hamsterIdNumber = Number(hamsterId)
-console.log(Date().toLocaleString()+":  type of id:  "+typeof hamsterIdNumber)
+console.log(Date().toLocaleString()+":  type of hamsterIDNumber:  "+typeof hamsterIdNumber)
 
 var params = {
   TableName:  "hamsters",
