@@ -21,13 +21,14 @@ var params = {
   Key:  {
     "id": hamsterIdNumber
   },
-  UpdateExpression:  "set #hsname = :n, results = :r",
+  //UpdateExpression:  "set #hsname = :n, results = :r",
+  UpdateExpression:  "set results = list_append(if_not_exists(results, :empty_list), :r)",
   ExpressionAttributeValues:{
-    ":n":"JulieCakes5",
+//    ":n":"JulieCakes6",
     ":r": [{"raceId": 3,"place": 2}]},
-  ExpressionAttributeNames:{
-    "#hsname":"name"
-  },
+  // ExpressionAttributeNames:{
+  //   "#hsname":"name"
+  // },
   ReturnValues:  "UPDATED_NEW"
 }
 
