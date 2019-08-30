@@ -22,7 +22,7 @@ var params = {
     "id": hamsterIdNumber
   },
   //UpdateExpression:  "set #hsname = :n, results = :r",
-  UpdateExpression:  "set results = list_append(if_not_exists(results, :empty_list), :r)",
+  UpdateExpression:  "set results = list_append(results, :r)",
   ExpressionAttributeValues:{
 //    ":n":"JulieCakes6",
     ":r": [{"raceId": 3,"place": 2}]},
