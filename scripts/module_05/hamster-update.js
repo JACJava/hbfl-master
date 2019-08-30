@@ -9,17 +9,19 @@ AWS.config.update({ region: 'us-east-2' })
 
 const client = new AWS.DynamoDB.DocumentClient()
 
-console.log("Updating Hamster id 1 in the hamster table.")
+console.log(Date().toLocaleString()+":  Updating Hamster id 1 in the hamster table.")
 
-id = 1
+hamsterid = 1
+console.log(Date().toLocaleString()+":  type of id:  "+typeof hamsterId)
+
 var params = {
   TableName:  "hamsters",
   Key:  {
-    "id": id
+    "id": hamsterId
   },
   UpdateExpression:  "set #hsname = :n",
   ExpressionAttributeValues:{
-    ":n":"JulieCakes"
+    ":n":"JulieCakes1"
   },
   ExpressionAttributeNames:{
     "#hsname":"name"
@@ -31,10 +33,10 @@ console.log(Date().toLocaleString()+":  hamster-update, attempting to update" + 
 
 client.update(params, function(err, data) {
     if (err) {
-        console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2))
+        console.error(Date().toLocaleString()+":  Unable to update item. Error JSON:", JSON.stringify(err, null, 2))
     } else {
-        console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2))
+        console.log(Date().toLocaleString()+":  UpdateItem succeeded:", JSON.stringify(data, null, 2))
     }
   })
 
-console.log("End Updating Hamster table.")
+console.log(Date().toLocaleString()+":  End Updating Hamster table.")
