@@ -11,7 +11,7 @@ const client = new AWS.DynamoDB.DocumentClient()
 
 console.log(Date().toLocaleString()+":  Updating Hamster id 1 in the hamster table.")
 
-hamsterId = 1
+hamsterId = '1'
 console.log(Date().toLocaleString()+":  type of id:  "+typeof hamsterId)
 
 var params = {
@@ -21,7 +21,7 @@ var params = {
   },
   UpdateExpression:  "set #hsname = :n",
   ExpressionAttributeValues:{
-    ":n":"JulieCakes2"
+    ":n":"JulieCakes3"
   },
   ExpressionAttributeNames:{
     "#hsname":"name"
