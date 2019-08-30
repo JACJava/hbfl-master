@@ -21,7 +21,7 @@ var params = {
   },
   UpdateExpression:  "set #hsname = :n",
   ExpressionAttributeValues:{
-    ":n":"JulieCakes1"
+    ":n":"JulieCakes2"
   },
   ExpressionAttributeNames:{
     "#hsname":"name"
