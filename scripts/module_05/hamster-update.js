@@ -13,15 +13,17 @@ console.log(Date().toLocaleString()+":  Updating Hamster id 1 in the hamster tab
 
 hamsterId = '1'
 console.log(Date().toLocaleString()+":  type of id:  "+typeof hamsterId)
+hamsterIdNumber = Number(hamsterId)
+console.log(Date().toLocaleString()+":  type of id:  "+typeof hamsterIdNumber)
 
 var params = {
   TableName:  "hamsters",
   Key:  {
-    "id": hamsterId
+    "id": hamsterIdNumber
   },
   UpdateExpression:  "set #hsname = :n",
   ExpressionAttributeValues:{
-    ":n":"JulieCakes3"
+    ":n":"JulieCakes4"
   },
   ExpressionAttributeNames:{
     "#hsname":"name"
