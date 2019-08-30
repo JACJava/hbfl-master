@@ -24,7 +24,7 @@ var params = {
   UpdateExpression:  "set #hsname = :n, results = :r",
   ExpressionAttributeValues:{
     ":n":"JulieCakes5",
-    ":r": [{"raceId": 2,"place": 1}]},
+    ":r": [{"raceId": 3,"place": 2}]},
   ExpressionAttributeNames:{
     "#hsname":"name"
   },
