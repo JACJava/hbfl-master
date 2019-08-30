@@ -29,13 +29,13 @@ var params = {
   ReturnValues:  "UPDATED_NEW"
 }
 
-console.log(Date().toLocaleString()+":  hamster-update, attempting to update" + params)
+console.log(Date().toLocaleString()+":  hamster-update, attempting to update with:  " + JSON.stringify(params, null, 2))
 
 client.update(params, function(err, data) {
     if (err) {
-        console.error(Date().toLocaleString()+":  Unable to update item. Error JSON:", JSON.stringify(err, null, 2))
+        console.error(Date().toLocaleString()+":  Unable to update item. Error JSON:  ", JSON.stringify(err, null, 2))
     } else {
-        console.log(Date().toLocaleString()+":  UpdateItem succeeded:", JSON.stringify(data, null, 2))
+        console.log(Date().toLocaleString()+":  UpdateItem succeeded:  ", JSON.stringify(data, null, 2))
     }
   })
 
