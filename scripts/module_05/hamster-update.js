@@ -2,6 +2,7 @@
 // cd /hbfl/scripts/module_05
 // npm install aws-sdk
 // node hamster-update.js
+// added a comment
 
 const AWS = require('aws-sdk')
 
