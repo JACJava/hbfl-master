@@ -36,9 +36,7 @@ function createLambdaKinesisRole2 () {
   const roleName = 'lambda-kinesis-consumer-role'
   const iam = new AWS.IAM()
   const params = {
-    RoleName: roleName,
-    Path: '/service-role/',
-    AssumeRolePolicyDocument: '{ "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Principal": { "Service": "lambda.amazonaws.com" }, "Action": "sts:AssumeRole" } ] }'
+    RoleName: roleName
   }
   return new Promise((resolve, reject) => {
       iam.getRole(params, (err) => {
