@@ -38,13 +38,15 @@ function createLambdaKinesisRole2 () {
   const params = {
     RoleName: roleName
   }
+
   return new Promise((resolve, reject) => {
-      iam.getRole(params, (err) => {
-          if (err) reject(err)
-          else resolve(data.Role.Arn)
-        })
+    iam.getRole(params, (err, data) => {
+      if (err) reject(err)
+      else resolve(data.Role.Arn)
     })
+  })
 }
+
 
 function zipLambdaFile () {
   const archive = archiver('zip', {
