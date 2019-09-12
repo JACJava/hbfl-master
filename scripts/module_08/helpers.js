@@ -43,7 +43,6 @@ function createLambdaKinesisRole2 () {
           if (err) reject(err)
           else resolve(data.Role.Arn)
         })
-      }
     })
 }
 
