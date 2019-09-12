@@ -10,7 +10,7 @@ const functionName = 'hamster-kinesis-stream-consumer'
 const kinesisArn = 'arn:aws:kinesis:us-east-2:688220141166:stream/hamster-race-results'
 let roleArn
 
-helpers.createLambdaKinesisRole2()
+helpers.createLambdaKinesisRole()
 .then((arn) => {
   roleArn = arn
   return helpers.zipLambdaFile()
