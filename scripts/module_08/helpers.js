@@ -5,6 +5,9 @@ const streamBuffers = require('stream-buffers')
 const fs = require('fs')
 
 function createLambdaKinesisRole () {
+
+  resolve('arn:aws:iam::688220141166:role/service-role/lambda-kinesis-consumer-role')
+  //
   // const roleName = 'lambda-kinesis-consumer-role'
   // const iam = new AWS.IAM()
   // const params = {
