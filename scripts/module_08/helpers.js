@@ -5,33 +5,48 @@ const streamBuffers = require('stream-buffers')
 const fs = require('fs')
 
 function createLambdaKinesisRole () {
+  const roleName = 'lambda-kinesis-consumer-role'
+  const iam = new AWS.IAM()
+  const params = {
+    RoleName: roleName,
+    Path: '/service-role/',
+    AssumeRolePolicyDocument: '{ "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Principal": { "Service": "lambda.amazonaws.com" }, "Action": "sts:AssumeRole" } ] }'
+  }
 
-  resolve('arn:aws:iam::688220141166:role/service-role/lambda-kinesis-consumer-role')
-  //
-  // const roleName = 'lambda-kinesis-consumer-role'
-  // const iam = new AWS.IAM()
-  // const params = {
-  //   RoleName: roleName,
-  //   Path: '/service-role/',
-  //   AssumeRolePolicyDocument: '{ "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Principal": { "Service": "lambda.amazonaws.com" }, "Action": "sts:AssumeRole" } ] }'
-  // }
-  //
-  // return new Promise((resolve, reject) => {
-  //   iam.createRole(params, (err, data) => {
-  //     if (err) reject(err)
-  //     else {
-  //       const params = {
-  //         PolicyArn: 'arn:aws:iam::aws:policy/AmazonKinesisReadOnlyAccess',
-  //         RoleName: roleName
-  //       }
-  //
-  //       iam.attachRolePolicy(params, (err) => {
-  //         if (err) reject(err)
-  //         else setTimeout(() => resolve(data.Role.Arn), 10000)
-  //       })
-  //     }
-  //   })
-  // })
+  return new Promise((resolve, reject) => {
+    iam.createRole(params, (err, data) => {
+      if (err) reject(err)
+      else {
+        const params = {
+          PolicyArn: 'arn:aws:iam::aws:policy/AmazonKinesisReadOnlyAccess',
+          RoleName: roleName
+        }
+
+        iam.attachRolePolicy(params, (err) => {
+          if (err) reject(err)
+          else setTimeout(() => resolve(data.Role.Arn), 10000)
+        })
+      }
+    })
+  })
+}
+
+
+function createLambdaKinesisRole2 () {
+  const roleName = 'lambda-kinesis-consumer-role'
+  const iam = new AWS.IAM()
+  const params = {
+    RoleName: roleName,
+    Path: '/service-role/',
+    AssumeRolePolicyDocument: '{ "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Principal": { "Service": "lambda.amazonaws.com" }, "Action": "sts:AssumeRole" } ] }'
+  }
+  return new Promise((resolve, reject) => {
+      iam.getRole(params, (err) => {
+          if (err) reject(err)
+          else resolve(data.Role.Arn)
+        })
+      }
+    })
 }
 
 function zipLambdaFile () {
