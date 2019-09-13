@@ -1,21 +1,40 @@
 // Imports
 const AWS = require('aws-sdk')
 
-AWS.config.update({ region: '/* TODO: Add your region */' })
+AWS.config.update({ region: 'us-east-2' })
 
 // Declare local variables
 const route53 = new AWS.Route53()
-const hzId = '/* TODO: Add your hostedzone id */'
+const hzId = '/hostedzone/Z186JH4PYS50KU'
 
 createRecordSet(hzId)
 .then(data => console.log(data))
 
 function createRecordSet (hzId) {
-  // TODO: Create params const
-  // Link to ELB Regions:
-  // https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region
+  const params = {
+    HostedZoneId: hzId,
+    ChangeBatch: {
+      Changes: [
+        {
+          Action: 'CREATE',
+          ResourceRecordSet: {
+            Name: 'julie1023aws.com',
+            Type: 'A',
+            AliasTarget: {
+              DNSName: 'hamsterELB-175195876.us-east-2.elb.amazonaws.com',
+              EvaluateTargetHealth: false,
+              HostedZoneId: 'Z3AADJGX6KTTL2'
+            }
+          }
+        }
+      ]
+    }
+  }
 
   return new Promise((resolve, reject) => {
-    // TODO: Create record set
+    route53.changeResourceRecordSets(params, (err, data) => {
+      if (err) reject(err)
+      else resolve(data)
+    })
   })
 }
