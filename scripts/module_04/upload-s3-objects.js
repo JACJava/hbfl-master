@@ -6,7 +6,7 @@ AWS.config.update({ region: 'us-east-2' })
 
 // Declare local variables
 const s3 = new AWS.S3()
-const bucketName = 'hamster-bucket-julieaws'
+const bucketName = 'hamster-bucket-julieawscf'
 
 helpers.getPublicFiles()
 .then(files => uploadS3Objects(bucketName, files))
