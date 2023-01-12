@@ -17,7 +17,7 @@
     "array-shuffle": "1.0.1",
     "aws-sdk": "2.91.0",
     "babel-plugin-transform-object-rest-spread": "6.23.0",
-    "bcrypt": "1.0.2",
+    "bcrypt": "1.0.3",
     "bluebird": "3.5.0",
     "boom": "5.2.0",
     "catbox": "8.0.1",
